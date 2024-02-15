@@ -54,7 +54,7 @@ class Mailer
                 }
 
                 //recaptcha php check
-                $rec_secret = '6Lf9VPgnAAAAAIa5U_3IbPmHo_q0YkJVIkC-hWNJ';
+                $rec_secret = '';
                 $rc_ck = 'https://www.google.com/recaptcha/api/siteverify?secret=' . $rec_secret .
                     '&response=' . $post['grecaptcha'] .
                     '&remoteip=' . $_SERVER['REMOTE_ADDR'];
