@@ -1,0 +1,295 @@
+* {
+    outline: 0;
+    box-sizing: border-box;
+    --button-background:#0159A5;
+    --button-background-hover:#003563;
+    --button-background-alternate:#216532;
+    --button-background-alternate-hover:#0e3b19;
+    --color:#222;
+    --color-invert:white;
+    --color-title:#0159A5;
+    --shield-filter:invert(20%) sepia(99%) saturate(2183%) hue-rotate(194deg) brightness(88%) contrast(99%);
+    --slider-on:#0159A5;
+    --slider-off:#aaaaaa;
+    --slider-fixed:#61a6e1;
+}
+body div.gckconsent-show {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: rgba(1, 1, 1, .8);
+    padding: 1rem;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    z-index: 1001;
+    transition: 250ms;
+}
+
+body div.gckconsent-show h3,
+body div.gckconsent-show h4,
+body div.gckconsent-show p,
+body div.gckconsent-show li,
+body div.gckconsent-show button {
+    font-family:system-ui,-apple-system,sans-serif;
+}
+
+body div.gckconsent-show #gckconsent-prefs {
+    width: 100%;
+    max-width: 580px;
+    padding: 2rem;
+    background-color: var(--color-invert);
+    position: absolute;
+    transition: 250ms;
+}
+
+body div.gckconsent-show #gckconsent-prefs h3 {
+    font-weight: 600;
+    color: var(--color-title);
+    margin: 0 0 1rem;
+    font-size: 1.4rem;
+}
+body div.gckconsent-show #gckconsent-prefs h4 {
+    font-size: 1.2rem;
+    margin: 1.2rem 0 0.8rem;
+}
+
+body div.gckconsent-show #gckconsent-prefs p.explanation {
+    font-size: 1rem;
+    line-height: 1.4rem;
+}
+
+body div.gckconsent-show #gckconsent-prefs .controls {
+    display: flex;
+    gap: 1rem;
+}
+
+body div.gckconsent-show #gckconsent-prefs .controls .save,
+body div.gckconsent-show #gckconsent-prefs .controls .save:focus,
+body div.gckconsent-show #gckconsent-prefs .controls .save:visited {
+    background: var(--button-background);
+    color: var(--button-color);
+    border: none;
+    transition: 250ms;
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+    color: var(--color-invert);
+}
+
+body div.gckconsent-show #gckconsent-prefs .controls .save:hover,
+body div.gckconsent-show #gckconsent-prefs .controls .save:active {
+    background: var(--button-background-hover);
+    cursor: pointer;
+}
+
+body div.gckconsent-show #gckconsent-prefs .controls button,
+body div.gckconsent-show #gckconsent-prefs .controls button:focus,
+body div.gckconsent-show #gckconsent-prefs .controls button:visited {
+    background: var(--button-background-alternate);
+    border: none;
+    transition: 250ms;
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+    color: var(--color-invert);
+}
+
+body div.gckconsent-show #gckconsent-prefs .controls button:hover,
+body div.gckconsent-show #gckconsent-prefs .controls button:active {
+    background: var(--button-background-alternate-hover);
+    cursor: pointer;
+}
+
+body div.gckconsent-show #gckconsent-prefs .preflist {
+    padding: 0;
+    margin: 0 0 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+body div.gckconsent-show #gckconsent-prefs .preflist li {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    font-weight: 400;
+    color: var(--color);
+}
+
+body div.gckconsent-show #gckconsent-prefs .preflist li label.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+body div.gckconsent-show #gckconsent-prefs .preflist li label.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+body div.gckconsent-show #gckconsent-prefs .preflist li label.switch input:checked+.slider {
+    background-color: var(--slider-on);
+}
+body div.gckconsent-show #gckconsent-prefs .preflist li label.switch input:checked+.slider.slider-e {
+    background-color: var(--slider-fixed);
+}
+
+body div.gckconsent-show #gckconsent-prefs .preflist li label.switch input:focus+.slider {
+    box-shadow: 0 0 1px var(--slider-on);
+}
+
+body div.gckconsent-show #gckconsent-prefs .preflist li label.switch input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+body div.gckconsent-show #gckconsent-prefs .preflist li label.switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--slider-off);
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+body div.gckconsent-show #gckconsent-prefs .preflist li label.switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--color-invert);
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+body div.gckconsent-setup {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: rgba(1, 1, 1, .8);
+    padding: 1rem;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    z-index: 1000;
+    transition: 250ms;
+}
+
+body div.gckconsent-setup h3,
+body div.gckconsent-setup p,
+body div.gckconsent-setup button {
+    font-family:system-ui,-apple-system,sans-serif;
+}
+
+body div.gckconsent-setup #gckconsent-flag {
+    padding: 1rem;
+    border-top: 0.3rem solid var(--color-title);
+    position: fixed;
+    bottom: 0;
+    background: var(--color-invert);
+    margin: 0;
+    z-index: 1001;
+    width: 100%;
+}
+
+body div.gckconsent-setup #gckconsent-flag h3 {
+    color: var(--color-title);
+    font-weight: 500;
+    font-size: 1.6rem;
+    display: flex;
+    gap: .4rem;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 0 1rem;
+}
+
+body div.gckconsent-setup #gckconsent-flag h3 img {
+    zoom: 1.6;
+    filter: var(--shield-filter);
+    max-width: 100%;
+    height: auto;
+    border-style: none;
+    outline: 0;
+    box-sizing: border-box;
+    vertical-align: middle;
+    max-width: 24px;
+}
+
+body div.gckconsent-setup #gckconsent-flag .controls {
+    display: flex;
+    gap: 1rem;
+}
+
+body div.gckconsent-setup #gckconsent-flag .controls .acceptall,
+body div.gckconsent-setup #gckconsent-flag .controls .acceptall:focus,
+body div.gckconsent-setup #gckconsent-flag .controls .acceptall:visited {
+    background: var(--button-background);
+    border: none;
+    transition: 250ms;
+    margin: 0;
+    max-width: 300px;
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+    color: var(--color-invert);
+}
+
+body div.gckconsent-setup #gckconsent-flag .controls .acceptall:hover,
+body div.gckconsent-setup #gckconsent-flag .controls .acceptall:active {
+    background: var(--button-background-hover);
+    cursor: pointer;
+}
+
+body div.gckconsent-setup #gckconsent-flag .controls .prefs,
+body div.gckconsent-setup #gckconsent-flag .controls .prefs:focus,
+body div.gckconsent-setup #gckconsent-flag .controls .prefs:visited {
+    background: var(--button-background-alternate);
+    border: none;
+    transition: 250ms;
+    margin: 0;
+    max-width: 300px;
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+    color: var(--color-invert);
+}
+
+body div.gckconsent-setup #gckconsent-flag .controls .prefs:hover,
+body div.gckconsent-setup #gckconsent-flag .controls .prefs:active {
+    background: var(--button-background-alternate-hover);
+    cursor: pointer;
+}
+
+
+/* max 575 */
+@media (max-width: 575px) {
+
+    body div.gckconsent-setup #gckconsent-flag .controls {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    body div.gckconsent-show #gckconsent-prefs {
+        max-width: 95%;
+        padding: 1rem;
+    }
+
+    body div.gckconsent-show #gckconsent-prefs .controls {
+        flex-direction: column;
+        justify-content: center;
+    }
+}

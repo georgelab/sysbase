@@ -1,0 +1,9 @@
+/app/vendor/*
+accesslog
+errorlog
+systemlog
+/app/public/assets/image/*
+/app/public/assets/favicon/*
+/app/public/static/*
+/app/public/.fnxpwd
+/app/public/.htaccess
